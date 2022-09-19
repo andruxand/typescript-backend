@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "fecha": "2022-01-01",
+    "nombreCompleto": "Carlos Gómez",
+    "monto": 20,
+    "pais": "COL",
+    "tipo": "Basic",
+    "estado": "VC"
+  },
+  {
+    "id": 2,
+    "fecha": "2022-01-01",
+    "nombreCompleto": "Julián Castro",
+    "monto": 100,
+    "pais": "COL",
+    "tipo": "Basic",
+    "estado": "ANT"
+  },
+  {
+    "id": 3,
+    "fecha": "2022-01-02",
+    "nombreCompleto": "Carlos Gómez",
+    "monto": 50,
+    "pais": "CL",
+    "tipo": "Premium",
+    "estado": "SC"
+  },
+  {
+    "id": 4,
+    "fecha": "2022-01-02",
+    "nombreCompleto": "Alejandro martínez",
+    "monto": 39.45,
+    "pais": "COL",
+    "tipo": "Medium",
+    "estado": "VC"
+  },
+  {
+    "id": 5,
+    "fecha": "2022-01-03",
+    "nombreCompleto": "Andrés Duque",
+    "monto": 1090,
+    "pais": "CL",
+    "tipo": "Premium",
+    "estado": "SC"
+  }
+]
