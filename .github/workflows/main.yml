@@ -50,3 +50,6 @@ jobs:
 
             - name: Test project Ckeck
               run: npm run test
+              
+            - name: Coverage Check
+              run: npm run coverage
