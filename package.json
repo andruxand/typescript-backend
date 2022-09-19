@@ -9,6 +9,7 @@
     "tsc": "tsc",
     "typecheck": "tsc --noEmit",
     "test": "NODE_ENV=testing mocha -r ts-node/register test/**/*.test.ts --exit",
+    "coverage": "nyc npm run test",
     "lint": "eslint --fix src --config .eslintrc.json --ext .js,.j,.ts,.tsx",
     "prettier": "prettier --write --config .prettierrc.json \"src/**/*.ts\"",
     "prepare": "husky install",
@@ -40,8 +41,27 @@
     "commit-msg": "npx commitlint --edit",
     "pre-commit": "npm run prettier && npm run lint"
   },
+  "nyc": {
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "check-coverage": true,
+    "all": true,
+    "include": [
+      "src/**/!(*.test.*).[tj]s?(x)"
+    ],
+    "exclude": [
+      "src/_tests_/**/*.*"
+    ],
+    "reporter": [
+      "html",
+      "lcov",
+      "text",
+      "text-summary"
+    ],
+    "report-dir": "coverage"
+  },
   "devDependencies": {
     "@commitlint/config-conventional": "17.1.0",
+    "@istanbuljs/nyc-config-typescript": "1.0.2",
     "@types/chai": "4.3.3",
     "@types/compression": "1.7.2",
     "@types/cors": "2.8.12",
@@ -64,6 +84,7 @@
     "eslint-plugin-promise": "6.0.1",
     "husky": "8.0.1",
     "mocha": "10.0.0",
+    "nyc": "15.1.0",
     "prettier": "2.7.1",
     "supertest": "6.2.4",
     "ts-node-dev": "2.0.0",
