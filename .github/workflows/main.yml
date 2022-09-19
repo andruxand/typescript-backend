@@ -1,0 +1,52 @@
+# This is a basic workflow to help you get started with Actions
+name: Code Integrity Check
+
+# Controls when the workflow will run
+on:
+    # Triggers the workflow on a push to the master branch where any source file was edited
+    push:
+        branches:
+            - main
+
+    # Allows you to run this workflow manually from the Actions tab
+    workflow_dispatch:
+
+env:
+    CI: true
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+    # This workflow contains a single job called "build"
+    codecheck:
+        # The type of runner that the job will run on
+        runs-on: ubuntu-latest
+
+        # Steps represent a sequence of tasks that will be executed as part of the job
+        steps:
+            # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+            - name: Checkout source code
+              uses: actions/checkout@v2
+
+            - name: Cache node modules
+              uses: actions/setup-node@v2
+              with:
+                  node-version: '16'
+                  cache: 'npm'
+
+            - name: Install
+              run: npm install
+
+            - name: Copy .env variables
+              run: cp ./environments/.env.development .env
+            
+            - name: Prettier
+              run: npm run prettier
+            
+            - name: ESLint Check
+              run: npm run lint
+              
+            - name: TS Type Check
+              run: npm run typecheck
+
+            - name: Test project Ckeck
+              run: npm run test
