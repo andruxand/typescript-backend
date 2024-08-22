@@ -1,5 +1,5 @@
 # Aplicación Backend
-Repositorio para prueba técnica de Afex backend
+Repositorio para typescript backend
 
 
 ## Pasos para iniciar
