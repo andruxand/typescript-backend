@@ -1,4 +1,4 @@
-# Aplicación Backend
+# Aplicación Backend (TypeScript + Express)
 Repositorio para typescript backend
 
 
