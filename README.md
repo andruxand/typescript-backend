@@ -1,4 +1,4 @@
-# Aplicación Backend AFEX
+# Aplicación Backend
 Repositorio para prueba técnica de Afex backend
 
 
